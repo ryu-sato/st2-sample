@@ -14,9 +14,13 @@ examples.mistral-basic:
       publish:
         stdout: <% task(task1).result.stdout %>
         stderr: <% task(task1).result.stderr %>
+      on-success:
+        - task2
 
     task2:
       action: core.ask
+      on-success:
+        - task3
 
     task3:
       action: core.local cmd=<% $.cmd %> timeout=<% $.timeout %>

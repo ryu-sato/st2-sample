@@ -4,7 +4,7 @@ enabled: true
 runner_type: mistral-v2
 entry_point: workflows/mistral-basic.yaml
 name: mistral-basic
-pack: examples
+pack: st2_sample
 parameters:
   cmd:
     required: true
